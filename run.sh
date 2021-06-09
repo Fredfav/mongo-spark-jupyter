@@ -43,6 +43,13 @@ docker-compose exec mongo1 wget https://github.com/RWaltersMA/mongo-spark-jupyte
 
 docker-compose exec mongo1 /usr/bin/mongorestore Source.bson -h rs0/mongo1:27017,mongo2:27018,mongo3:27019 -d Stocks -c Source --drop
 
+echo -e "\nUploading ratings data into Recommandations database\n"
+
+docker-compose exec mongo1 apt-get install unzip
+docker-compose exec mongo1 wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+docker-compose exec mongo1 unzip ml-latest-small.zip
+docker-compose exec mongo1 /usr/bin/mongoimport -h rs0/mongo1:27017,mongo2:27018,mongo3:27019 --db recommendation --collection ratings --type CSV --file ml-latest-small/ratings.csv --headerline
+
 echo '''
 
 
