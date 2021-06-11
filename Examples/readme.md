@@ -2,7 +2,7 @@
 
 To use MongoDB data with Spark create a new Python Jupyter notebook by navigating to the Jupyter URL and under notebook select Python 3 :
 
-![Image of New Python notebook](https://github.com/fredfav/mongo-spark/images/newpythonnotebook.png)
+![Image of New Python notebook](https://github.com/Fredfav/mongo-spark-jupyter/blob/master/images/newpythonnotebook.png)
 
 Now you can run through the following demo script.  You can copy and execute one or more of these lines :
 
